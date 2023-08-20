@@ -1,0 +1,21 @@
+package lexicon.se.Model;
+
+public class Beverage extends Product {
+    private final boolean alcoholic;
+    private final int sugarPercentage;
+    public Beverage(int id,String productName,boolean alcoholic ,int sugarPercentage, double price){
+        super(id,price,productName);
+        this.alcoholic= alcoholic;
+        this.sugarPercentage= sugarPercentage;
+    }
+
+           public String examine(){
+             return "{id :" + getId() + "beverage: " + getProductName() + " with" + sugarPercentage + " % sugar }" ;
+    }
+    @Override
+    public String use(){
+        String description = "You drink some " + getProductName();
+        description += alcoholic? " and feel a bit tipsy": "" ;
+        return description;
+    }
+}
